@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
+import thunk from "redux-thunk";
+import { Provider} from 'react-redux';
+import {createStore, applyMiddleware, compose} from "redux";
+import reducer from "./rootReducer";
+
+
+import "./firebase";
+
+import "./static/bootstrap.css"
+import "./static/style.css"
+
+import Navbar from "./Nav/index";
+
+const store = createStore(reducer);
+window.store = store;
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <Navbar />
+  </Provider>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
