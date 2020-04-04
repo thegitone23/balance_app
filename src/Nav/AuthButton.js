@@ -3,11 +3,11 @@ import React from "react"
 const AuthButton = (props) => {
   if(props.status)
   {
-    return <button className="btn my-2 my-sm-0 btn-outline-success" onClick={props.signOut}>Sign Out</button>
+    return <button className="btn btn-outline-success" onClick={props.signOut}>Sign Out</button>
   }
   else
   {
-  return <button className="btn my-2 my-sm-0 btn-outline-success" onClick={props.signIn}>Sign In</button>
+  return <button className="btn btn-outline-success" onClick={props.signIn}>Sign In</button>
   }
 }
 

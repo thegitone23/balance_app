@@ -1,9 +1,13 @@
 import React from "react"
-import { firebase, googleAuth} from "../firebase";
+import { firebase, googleAuth, firebaseDB} from "../firebase";
 import AuthButton from "./AuthButton";
 import LoginStatus from "./LoginStatus";
 import {SignedInAction, SignedOutAction} from "./actions";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
+import UserSchema from "../Schema/UserSchema";
+import {initializeUser} from "../helpers";
+
 
 
 class Navbar extends React.Component {
@@ -14,8 +18,11 @@ class Navbar extends React.Component {
 
   handleStatus = () => {
     const user = firebase.auth().currentUser;
+    
       if(user)
       {
+        // create user's data if doesn't exist
+        initializeUser(user, firebaseDB, UserSchema);
         this.props.SignedIn(user.displayName,user.email);    
       }    
       else
@@ -43,15 +50,24 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">Balance</a>
+        <Link to="/" className="navbar-brand">Balance</Link>
           <ul className="navbar-nav">
             <li className="nav-item">
               <LoginStatus status={this.props.authenticated} userName={this.props.userName} />
             </li>
 
+          </ul>
+
+          <ul className="navbar-nav ml-auto">
+
+            <li className="nav-item">
+              {this.props.authenticated ? <Link to="/transactions"><button className="btn btn-outline-success">Transactions</button></Link> : undefined}
+            </li>
+
             <li className="nav-item">
               <AuthButton status={this.props.authenticated} signIn={this.signIn} signOut={this.signOut} />
             </li>
+
           </ul>
       </nav>      
     );

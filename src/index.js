@@ -12,13 +12,24 @@ import "./firebase";
 import "./static/bootstrap.css"
 import "./static/style.css"
 
-import Navbar from "./Nav/index";
+import Navbar from "./Nav";
+import Home from "./Home";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Transactions from './Transactions';
 
 const store = createStore(reducer);
 window.store = store;
 ReactDOM.render(
   <Provider store={store}>
-    <Navbar />
+    <BrowserRouter>
+    <div className="container text-center">
+      <Navbar />
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/transactions" component={Transactions} />
+      </Switch>
+    </div>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
