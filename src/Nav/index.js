@@ -22,7 +22,7 @@ class Navbar extends React.Component {
       if(user)
       {
         // create user's data if doesn't exist
-        initializeUser(user, firebaseDB, UserSchema);
+        initializeUser(user, UserSchema);
         this.props.SignedIn(user.displayName,user.email);    
       }    
       else

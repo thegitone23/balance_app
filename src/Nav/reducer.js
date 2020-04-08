@@ -6,7 +6,7 @@ const NavbarReducer = (state = {} , action) => {
     case 'Signed_Out':
       return {...state, authenticated : false, userName : undefined, email : undefined};
     default:
-      return {...state, authenticated : false, userName : undefined, email : undefined};
+      return {...state};
       
   }
 };

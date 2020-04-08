@@ -3,8 +3,9 @@ const TransactionSchema = (from, to, payload) => {
     requestSender : from,
     requestReciever : to,
     status : "PENDING",
-    msg : payload.msg,
-    ammount : payload.ammount
+    desc : payload.desc,
+    amount : payload.amount,
+    type : payload.type
   }
 };
 

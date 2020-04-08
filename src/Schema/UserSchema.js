@@ -3,8 +3,7 @@ const UserSchema = (email,userName) => {
     email,
     userName,
     balance : 0,
-    transactionsPending : false,
-    transactionsCompleted : false,
+    pendingNotification : false,
     preferences : false
   }
 };

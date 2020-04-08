@@ -1,33 +1,44 @@
 import React from "react";
 import {connect} from "react-redux";
-
+import {correctEmail} from "../helpers";
+import Dashboard from "./Dashboard";
+import PublicProfile from "./PublicProfile"
 class Home extends React.Component {
   
   constructor(props) {
     super(props)
   }
 
+
+
   render() {
-    if(this.props.authenticated)
+    if(this.props.authenticated )
     {
-      return (
-        <div className="continer">
-          <h1>Welcome {this.props.userName}</h1>
-          <h6>{this.props.email}</h6>
-        </div>
-      )
+      if(this.props.email && this.props.match.params.id == correctEmail(this.props.email))
+      { return (
+          <Dashboard />
+        )
+      }
+
+      else
+      {
+        return (
+          <PublicProfile userKey={this.props.match.params.id}/>
+        )
+      }
     }
+
     else
     {
       return (
-        <div className="continer">
+        <div className="container">
           <h2>You Got To Login First .. To Start Using The App</h2>
         </div>
 
       )
     }
-  }
 
+  }
 
 }
 
@@ -39,4 +50,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps,null)(Home);
+export default connect(mapStateToProps, null) (Home);
