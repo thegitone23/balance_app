@@ -6,7 +6,7 @@ import {SignedInAction, SignedOutAction} from "./actions";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import UserSchema from "../Schema/UserSchema";
-import {initializeUser} from "../helpers";
+import {initializeUser, correctEmail} from "../helpers";
 
 
 
@@ -34,6 +34,9 @@ class Navbar extends React.Component {
     firebase.auth().onAuthStateChanged((user) => {
       this.handleStatus();
     })
+
+    
+
   }
 
 

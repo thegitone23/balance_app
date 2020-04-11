@@ -30,7 +30,7 @@ class TransactionView extends React.Component {
   }
 
   handleTransaction = () => {
-    let payload = {desc : this.state.desc, amount : this.state.amount, type : this.state.paymentType }
+    let payload = {desc : this.state.desc, amount : this.state.amount, type : this.state.paymentType, senderName : this.props.senderName, receiverName : this.props.receiverName}
     let transcation = TransactionSchema(this.props.from, this.props.to, payload);
     transact(transcation);  
     this.props.TransactionRequest()  

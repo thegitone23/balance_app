@@ -41,7 +41,7 @@ class PublicProfile extends React.Component {
 
             <button className="btn btn-outline-success" onClick={this.props.ToggleLog}> {this.props.logPayment ? "Done For Now" : "Log A Payment"   } </button>
 
-            {this.props.logPayment ? <TransactionView from={correctEmail(this.props.email)} to={this.props.userKey}  /> : undefined}
+            {this.props.logPayment ? <TransactionView from={correctEmail(this.props.email)} to={this.props.userKey} receiverName={this.state.foreignUser} senderName={this.props.userName} /> : undefined}
 
           </div>
         )

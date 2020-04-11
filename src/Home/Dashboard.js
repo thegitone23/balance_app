@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux"
 import SearchUsers from "./SearchUsers"; 
+import RequestsList from "./RequestList"
 
 class Dashboard extends React.Component {
   constructor (props) {
@@ -14,6 +15,8 @@ class Dashboard extends React.Component {
         <div className="container">
           <h1>Dashboard</h1>
           <SearchUsers />
+          <hr />
+          <RequestsList />
         </div>
       )
     }
