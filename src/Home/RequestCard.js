@@ -65,11 +65,9 @@ const RequestCard = (props) => {
           <h6> Receiverer Key : {obj.requeRerequestReceiverer}</h6>
 
           <h5>{obj.desc}</h5>
-          <button className="btn btn-outline-success" onClick={() => handleRequest(props.data, true)}> Accept </button>
-          <button className="btn btn-outline-danger" onClick={() => handleRequest(props.data, false)} > Decline </button>
         </div>
       );
-  if(props.type == "PENDING_RECV")
+  if(props.type == "PENDING_RECEIVED")
     if(obj.requestReceiver == props.userKey && obj.status == "PENDING")
       return (
         <div className="card">

@@ -63,9 +63,6 @@ class Navbar extends React.Component {
 
           <ul className="navbar-nav ml-auto">
 
-            <li className="nav-item">
-              {this.props.authenticated ? <Link to="/transactions"><button className="btn btn-outline-success">Transactions</button></Link> : undefined}
-            </li>
 
             <li className="nav-item">
               <AuthButton status={this.props.authenticated} signIn={this.signIn} signOut={this.signOut} />

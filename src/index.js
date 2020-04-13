@@ -15,7 +15,6 @@ import "./static/style.css"
 import Navbar from "./Nav";
 import Home from "./Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Transactions from './Transactions';
 import Welcome from './Welcome';
 
 const store = createStore(reducer);
@@ -28,7 +27,6 @@ ReactDOM.render(
       <Switch>
         <Route path="/" component={Welcome} exact />
         <Route path="/user/:id" component={Home} />
-        <Route path="/transactions" component={Transactions} />
       </Switch>
     </div>
     </BrowserRouter>

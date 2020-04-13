@@ -7,13 +7,17 @@ import RequestCard from "./RequestCard"
 class RequestsList extends React.Component {
   constructor (props) {
     super(props)
+
     this.state = {
       requestsReceived : [],
-      requestsSent : []
+      requestsSent : [],
+      mode : "PENDING_RECIEVED",
+      title : "Pending You Received",
     }
   }
 
 componentDidMount() {
+
   // remeber to add index on requestReceiver
   firebaseDB.ref("transactionRequests").orderByChild("requestReceiver").equalTo(correctEmail(this.props.email)).on("value", (snap) => {
     let arr = []
@@ -40,61 +44,44 @@ componentWillUnmount() {
 
 }
 
+  handleClick = (e) => {
+    this.setState({mode : e.target.id, title : e.target.innerText});
+  }
+
 
   render() {
     if(this.props.authenticated)
     {
       return(
         <div className="container">
-          {/* <h1>Requests Log</h1>
-          <ul className="list-unstyled">
-            {this.state.requests.map(i => {
-              return(<li> <RequestCard data={i}/> </li> )
-            })}
-          </ul> */}
+          <h3>Transaction Requests</h3>
           <div className="row">
 
-            <div className="col-md">
-              <h3>Accepted Requests</h3>
-              <ul className="list-unstyled">
-                {[...this.state.requestsReceived, ...this.state.requestsSent].map(i => {
-                  return(<li> <RequestCard data={i} type="ACCEPTED" userKey={correctEmail(this.props.email)}/> </li> )
-                 })}
-              </ul>
-            </div>
+              <div className="col-md">
+                <button className="btn btn-outline-success" id="PENDING_RECEIVED" onClick={this.handleClick} >Pending You Received</button>
+              </div>  
 
-            <div className="col-md">
-              <h3>Rejected Requests </h3>
-              <ul className="list-unstyled">
-                {[...this.state.requestsReceived, ...this.state.requestsSent].map(i => {
-                  return(<li> <RequestCard data={i} type="REJECTED" userKey={correctEmail(this.props.email)}/> </li> )
-                 })}
-              </ul>
-            </div>
+              <div className="col-md">
+                <button className="btn btn-outline-success" id="ACCEPTED" onClick={this.handleClick} >Accepted Requests</button>
+              </div>  
 
-            <div className="col-md">
+              <div className="col-md">
+                <button className="btn btn-outline-success" id="REJECTED" onClick={this.handleClick} >Rejected Requests</button>
+              </div>  
 
-              <h3>Pending Requests You Sent</h3>
-              <ul className="list-unstyled">
-                {[...this.state.requestsReceived, ...this.state.requestsSent].map(i => {
-                  return(<li> <RequestCard data={i} type="PENDING_SENT" userKey={correctEmail(this.props.email)}/> </li> )
-                 })}
-              </ul>
-              
-            </div>
-
-            <div className="col-md">
-            
-              <h3>Pending Requests You Received</h3>
-              <ul className="list-unstyled">
-                {[...this.state.requestsReceived, ...this.state.requestsSent].map(i => {
-                  return(<li> <RequestCard data={i} type="PENDING_RECV" userKey={correctEmail(this.props.email)}/> </li> )
-                 })}
-              </ul>
-
-            </div>
-
+              <div className="col-md">
+                <button className="btn btn-outline-success" id="PENDING_SENT" onClick={this.handleClick} >Pending You Sent</button>
+              </div>  
           </div>
+          <hr /> 
+          <br />
+          <h2>{this.state.title}</h2>
+            <ul className="list-unstyled" id="REQUEST_LIST">
+              {[...this.state.requestsReceived, ...this.state.requestsSent].map(i => {
+                return(<li> <RequestCard data={i} type={this.state.mode} userKey={correctEmail(this.props.email)}/> </li> )
+                })}
+            </ul>
+          <h6>x-- End Of The List --x</h6>
 
         </div>
       )
