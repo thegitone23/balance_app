@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux"
 import SearchUsers from "./SearchUsers"; 
 import RequestsList from "./RequestList"
+import {Link} from "react-router-dom";
 
 class Dashboard extends React.Component {
   constructor (props) {
@@ -14,6 +15,8 @@ class Dashboard extends React.Component {
       return(
         <div className="container">
           <h1>Dashboard</h1>
+          <hr />
+          <Link to="/contacts" className="btn btn-outline-success">Recently Contacted</Link>
           <SearchUsers />
           <hr />
           <RequestsList />

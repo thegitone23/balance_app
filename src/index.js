@@ -16,9 +16,9 @@ import Navbar from "./Nav";
 import Home from "./Home";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Welcome from './Welcome';
+import Contacts from "./Contacts";
 
 const store = createStore(reducer);
-window.store = store;
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -26,6 +26,7 @@ ReactDOM.render(
       <Navbar />
       <Switch>
         <Route path="/" component={Welcome} exact />
+        <Route path="/contacts" component={Contacts} exact/>
         <Route path="/user/:id" component={Home} />
       </Switch>
     </div>

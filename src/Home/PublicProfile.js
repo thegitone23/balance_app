@@ -3,6 +3,7 @@ import {connect} from "react-redux"
 import {verifyUser, correctEmail} from "../helpers"
 import TransactionView from "./TransactionView";
 import {ToggleLogAction} from "./actions"
+import {firebaseDB} from "../firebase"
 
 class PublicProfile extends React.Component {
   constructor (props) {
@@ -35,9 +36,11 @@ class PublicProfile extends React.Component {
     {
       if(this.state.foreignUser) 
       {
+        firebaseDB.ref(`users/${correctEmail(this.props.email)}/preferences/contacts/${this.props.userKey}`).set(this.state.foreignUser)
         return (
           <div>
             <h2> Welcome To The Profile Of {this.state.foreignUser} </h2>
+            
 
             <button className="btn btn-outline-success" onClick={this.props.ToggleLog}> {this.props.logPayment ? "Done For Now" : "Log A Payment"   } </button>
 

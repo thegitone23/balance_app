@@ -7,6 +7,8 @@ const Welcome = (props) => {
   return (
     <div className="container">
       <h1>Welcome To The Balance App</h1>
+      <p>This app is basically a balance manger. You can send requests to your friends for the amount they owe you and all that stuff</p>
+      <footer>Created With &hearts; By thegitone23</footer>
       {props.authenticated ? <Redirect to={"/user/"+correctEmail(props.email)} /> : undefined}
     </div>
   );

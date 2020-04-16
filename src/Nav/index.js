@@ -63,7 +63,6 @@ class Navbar extends React.Component {
 
           <ul className="navbar-nav ml-auto">
 
-
             <li className="nav-item">
               <AuthButton status={this.props.authenticated} signIn={this.signIn} signOut={this.signOut} />
             </li>

@@ -62,6 +62,11 @@ componentWillUnmount() {
               </div>  
 
               <div className="col-md">
+                <button className="btn btn-outline-success" id="COMPLETED" onClick={this.handleClick} >Completed Requests</button>
+              </div>  
+
+
+              <div className="col-md">
                 <button className="btn btn-outline-success" id="ACCEPTED" onClick={this.handleClick} >Accepted Requests</button>
               </div>  
 
