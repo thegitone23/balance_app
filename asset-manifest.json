@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/balance_app/static/css/main.4e9bc4c2.chunk.css",
+    "main.js": "/balance_app/static/js/main.b6ad06c0.chunk.js",
+    "main.js.map": "/balance_app/static/js/main.b6ad06c0.chunk.js.map",
+    "runtime-main.js": "/balance_app/static/js/runtime-main.f85375f7.js",
+    "runtime-main.js.map": "/balance_app/static/js/runtime-main.f85375f7.js.map",
+    "static/js/2.99913136.chunk.js": "/balance_app/static/js/2.99913136.chunk.js",
+    "static/js/2.99913136.chunk.js.map": "/balance_app/static/js/2.99913136.chunk.js.map",
+    "index.html": "/balance_app/index.html",
+    "precache-manifest.42b8006ba6068dd6ac258e8fca9de3ba.js": "/balance_app/precache-manifest.42b8006ba6068dd6ac258e8fca9de3ba.js",
+    "service-worker.js": "/balance_app/service-worker.js",
+    "static/css/main.4e9bc4c2.chunk.css.map": "/balance_app/static/css/main.4e9bc4c2.chunk.css.map",
+    "static/js/2.99913136.chunk.js.LICENSE.txt": "/balance_app/static/js/2.99913136.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f85375f7.js",
+    "static/js/2.99913136.chunk.js",
+    "static/css/main.4e9bc4c2.chunk.css",
+    "static/js/main.b6ad06c0.chunk.js"
+  ]
+}
