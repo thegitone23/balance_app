@@ -1,6 +1,6 @@
 # balance_app
 This is a simple balance manager app, you can record all of the monetary transactions between you and your friends. You will need atleast a friend online or two google id's to use the app.  
-App is deployed at https://thegitone23.github.io/balance_app/
+A Demo of the app is deployed at https://thegitone23.github.io/balance_app/
 
 ## Tech Stack
 This app is mainly based on React, Redux, Firebase
