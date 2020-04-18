@@ -14,7 +14,7 @@ class Home extends React.Component {
   render() {
     if(this.props.authenticated )
     {
-      if(this.props.email && this.props.match.params.id == correctEmail(this.props.email))
+      if(this.props.email && this.props.match.params.id === correctEmail(this.props.email))
       { return (
           <Dashboard />
         )

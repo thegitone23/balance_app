@@ -1,6 +1,5 @@
 import React from "react";
 import {correctEmail, verifyUser} from "../helpers";
-import {firebaseDB} from "../firebase";
 import {Link} from "react-router-dom";
 
 class SearchUsers extends React.Component {

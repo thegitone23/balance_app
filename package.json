@@ -2,6 +2,11 @@
   "name": "balance",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Mayank Gautam", 
+    "email": "mayankgautam98@gmail.com"
+  },
+  "homepage": "https://thegitone23.github.io/balance_app/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

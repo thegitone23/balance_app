@@ -1,5 +1,3 @@
-import {firebaseDB} from "../firebase"
-import {correctEmail} from "../helpers"
 const NavbarReducer = (state = {} , action) => {
 
   switch(action.type) {

@@ -1,12 +1,12 @@
 import React from "react"
-import { firebase, googleAuth, firebaseDB} from "../firebase";
+import { firebase, googleAuth} from "../firebase";
 import AuthButton from "./AuthButton";
 import LoginStatus from "./LoginStatus";
 import {SignedInAction, SignedOutAction} from "./actions";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import UserSchema from "../Schema/UserSchema";
-import {initializeUser, correctEmail} from "../helpers";
+import {initializeUser} from "../helpers";
 
 
 

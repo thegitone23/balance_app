@@ -20,7 +20,7 @@ class TransactionView extends React.Component {
     let prop = event.target.id
     let val = event.target.value
     let obj = {}
-    if(prop == "amount")
+    if(prop === "amount")
     {
       val = (isNaN(val) || val < 0) ? 0 : val
       val = Number(val) 
